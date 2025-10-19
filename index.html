@@ -23,11 +23,24 @@
     <script>
       window.onload = () => {
         const ui = SwaggerUIBundle({
-          url: "https://raw.githubusercontent.com/Thomas-D40/test-simple-api/main/src/main/resources/openapi/contract-api.yaml",
+          urls: [
+            {
+              url: "https://raw.githubusercontent.com/Thomas-D40/test-simple-api/main/src/main/resources/openapi/contract-api.yaml",
+              name: "User API",
+            },
+            {
+              url: "https://raw.githubusercontent.com/Thomas-D40/test-simple-api/main/src/main/resources/openapi/contract-api.yaml",
+              name: "Order API",
+            },
+            {
+              url: "https://raw.githubusercontent.com/Thomas-D40/test-simple-api/main/src/main/resources/contract-api.yaml",
+              name: "Payment API",
+            },
+          ],
           dom_id: "#swagger-ui",
           deepLinking: true,
           presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
-          layout: "BaseLayout",
+          layout: "StandaloneLayout",
         });
         window.ui = ui;
       };
